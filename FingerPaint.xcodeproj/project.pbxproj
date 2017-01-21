@@ -13,6 +13,9 @@
 		3CDA80031E329B45002F6900 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CDA80011E329B45002F6900 /* Main.storyboard */; };
 		3CDA80051E329B45002F6900 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CDA80041E329B45002F6900 /* Assets.xcassets */; };
 		3CDA80081E329B45002F6900 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CDA80061E329B45002F6900 /* LaunchScreen.storyboard */; };
+		3CDA80111E329BAD002F6900 /* LineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDA80101E329BAD002F6900 /* LineModel.m */; };
+		3CDA80141E32A16A002F6900 /* DrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDA80131E32A16A002F6900 /* DrawView.m */; };
+		3CDA80171E32B752002F6900 /* LineSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDA80161E32B752002F6900 /* LineSegment.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,12 @@
 		3CDA80041E329B45002F6900 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3CDA80071E329B45002F6900 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3CDA80091E329B45002F6900 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3CDA800F1E329BAD002F6900 /* LineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineModel.h; sourceTree = "<group>"; };
+		3CDA80101E329BAD002F6900 /* LineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineModel.m; sourceTree = "<group>"; };
+		3CDA80121E32A16A002F6900 /* DrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawView.h; sourceTree = "<group>"; };
+		3CDA80131E32A16A002F6900 /* DrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawView.m; sourceTree = "<group>"; };
+		3CDA80151E32B751002F6900 /* LineSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineSegment.h; sourceTree = "<group>"; };
+		3CDA80161E32B752002F6900 /* LineSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineSegment.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +71,12 @@
 				3CDA7FFC1E329B45002F6900 /* AppDelegate.m */,
 				3CDA7FFE1E329B45002F6900 /* ViewController.h */,
 				3CDA7FFF1E329B45002F6900 /* ViewController.m */,
+				3CDA80121E32A16A002F6900 /* DrawView.h */,
+				3CDA80131E32A16A002F6900 /* DrawView.m */,
+				3CDA80151E32B751002F6900 /* LineSegment.h */,
+				3CDA80161E32B752002F6900 /* LineSegment.m */,
+				3CDA800F1E329BAD002F6900 /* LineModel.h */,
+				3CDA80101E329BAD002F6900 /* LineModel.m */,
 				3CDA80011E329B45002F6900 /* Main.storyboard */,
 				3CDA80041E329B45002F6900 /* Assets.xcassets */,
 				3CDA80061E329B45002F6900 /* LaunchScreen.storyboard */,
@@ -151,8 +166,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CDA80001E329B45002F6900 /* ViewController.m in Sources */,
+				3CDA80171E32B752002F6900 /* LineSegment.m in Sources */,
 				3CDA7FFD1E329B45002F6900 /* AppDelegate.m in Sources */,
 				3CDA7FFA1E329B45002F6900 /* main.m in Sources */,
+				3CDA80111E329BAD002F6900 /* LineModel.m in Sources */,
+				3CDA80141E32A16A002F6900 /* DrawView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
