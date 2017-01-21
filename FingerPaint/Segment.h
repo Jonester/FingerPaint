@@ -8,12 +8,11 @@
 
 @import UIKit;
 
-@interface LineSegment : NSObject
+@interface Segment : NSObject
 
 - (instancetype)initWithPoint1: (CGPoint)point1 point2: (CGPoint)point2;
 
 @property (nonatomic, assign) CGPoint point1;
 @property (nonatomic, assign) CGPoint point2;
-@property (nonatomic) NSMutableArray *lines;
 
 @end

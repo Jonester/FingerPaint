@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-@class LineSegment;
-@class LineModel;
-
+@class Segment;
+@class Line;
 @interface DrawView : UIView
 
-@property (nonatomic) NSMutableArray <LineModel *> *lines;
-@property (nonatomic) LineModel *lineModel;
+@property (nonatomic) NSMutableArray <Line *> *lines;
+@property (nonatomic) Segment *segment;
+@property (nonatomic) Line *line;
 
 -(void)clear;
 

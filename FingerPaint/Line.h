@@ -7,12 +7,12 @@
 //
 
 @import  UIKit;
-@class LineSegment;
+@class Segment;
 
-@interface LineModel : NSObject
+@interface Line : NSObject
 
 @property (nonatomic) UIColor *color;
-@property (nonatomic) NSMutableArray <LineSegment *> *lineSegments;
+@property (nonatomic) NSMutableArray <Segment *> *segments;
 
 - (instancetype)initWith: (UIColor *)color;
 

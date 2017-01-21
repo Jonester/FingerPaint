@@ -7,14 +7,16 @@
 //
 
 #import "ViewController.h"
-#import "LineSegment.h"
+#import "Segment.h"
 #import "DrawView.h"
+#import "Line.h"
 
 @interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet UIView *colorView;
 @property (weak, nonatomic) IBOutlet UIImageView *colorPalette;
 @property (weak, nonatomic) IBOutlet DrawView *drawingView;
+@property (strong, nonatomic) Line *line;
 
 
 @end
@@ -23,7 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     }
 
 
@@ -58,7 +60,10 @@
         sender.value = colorArray.count - 0.1;
     }
     self.colorView.backgroundColor = colorArray[(NSInteger)sender.value];
-        
+    self.line = [[Line alloc]initWith:colorArray[(NSInteger)sender.value]];
+    
+    [self.drawingView drawRect:self.view.frame];
+    
 }
 
 

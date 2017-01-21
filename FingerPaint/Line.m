@@ -6,10 +6,10 @@
 //  Copyright © 2017 Jonescr. All rights reserved.
 //
 
-#import "LineModel.h"
-#import "LineSegment.h"
+#import "Line.h"
+#import "Segment.h"
 
-@implementation LineModel
+@implementation Line
 
 
 - (instancetype)initWith: (UIColor *)color
@@ -18,15 +18,15 @@
     if (self) {
 
         _color = color;
-        _lineSegments = [NSMutableArray new];
+        _segments = [NSMutableArray new];
         
     }
     return self;
 }
 
--(void)storeLineSegments: (LineSegment *)lineSegments {
-    for (LineSegment *segment in self.lineSegments){
-        [self.lineSegments addObject:segment];
+-(void)storeLineSegments: (Segment *)lineSegments {
+    for (Segment *segment in self.segments){
+        [self.segments addObject:segment];
     }
 }
 

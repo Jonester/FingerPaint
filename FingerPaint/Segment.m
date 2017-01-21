@@ -6,9 +6,9 @@
 //  Copyright © 2017 Jonescr. All rights reserved.
 //
 
-#import "LineSegment.h"
+#import "Segment.h"
 
-@implementation LineSegment
+@implementation Segment
 
 - (instancetype)initWithPoint1:(CGPoint)point1 point2:(CGPoint)point2
 {

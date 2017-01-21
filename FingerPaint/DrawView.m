@@ -7,8 +7,8 @@
 //
 
 #import "DrawView.h"
-#import "LineSegment.h"
-#import "LineModel.h"
+#import "Segment.h"
+#import "Line.h"
 
 @implementation DrawView
 
@@ -17,6 +17,8 @@
     self = [super initWithCoder:coder];
     if (self) {
         _lines = [NSMutableArray new];
+        _segment   = [Segment new];
+        _line = [[Line alloc]initWith:[UIColor blackColor]];
     }
     return self;
 }
@@ -25,8 +27,8 @@
     UITouch *touch = touches.anyObject;
     CGPoint first = [touch previousLocationInView:self];
     
-    LineSegment *segment = [[LineSegment alloc]initWithPoint1:first point2:first];
-    [self.lineModel.lineSegments addObject:segment];
+    Segment *segment = [[Segment alloc]initWithPoint1:first point2:first];
+    [self.line.segments addObject:segment];
     [self setNeedsDisplay];
 }
 
@@ -35,8 +37,8 @@
     CGPoint first = [touch previousLocationInView:self];
     CGPoint second = [touch locationInView:self];
     
-    LineSegment *segment = [[LineSegment alloc]initWithPoint1:first point2:second];
-    [self.lineModel.lineSegments addObject:segment];
+    Segment *segment = [[Segment alloc]initWithPoint1:first point2:second];
+    [self.line.segments addObject:segment];
     [self setNeedsDisplay];
     
     NSLog(@"%s", __PRETTY_FUNCTION__);
@@ -47,11 +49,9 @@
     UIBezierPath *path = [UIBezierPath bezierPath];
     path.lineWidth = 5.0;
     path.lineCapStyle = kCGLineCapRound;
-    self.lineModel = [[LineModel alloc]initWith:[UIColor blackColor]];
-    UIColor *black = [UIColor blackColor];
-    [black setStroke];
+    [self.line.color setStroke];
     
-    for (LineSegment *segment in self.lineModel.lineSegments) {
+    for (Segment *segment in self.line.segments) {
         if (CGPointEqualToPoint(segment.point1, segment.point2)) {
             [path moveToPoint:segment.point1];
         }
@@ -60,13 +60,15 @@
     }
     [path stroke];
     
-    for (LineModel *line in self.lines) {
-        
+    for (Line *line in self.lines) {
+        for (Segment *segment in self.line.segments) {
+            
+        }
     }
 }
 
 -(void)clear {
-    [self.lineModel.lineSegments removeAllObjects];
+    [self.line.segments removeAllObjects];
     [self setNeedsDisplay];
 }
 

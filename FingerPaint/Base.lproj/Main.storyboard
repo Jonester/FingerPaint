@@ -31,7 +31,7 @@
                                             <constraint firstAttribute="height" constant="40" id="jJp-lc-Sjd"/>
                                         </constraints>
                                     </imageView>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="13" translatesAutoresizingMaskIntoConstraints="NO" id="wvc-so-lHw">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.10000000000000001" minValue="0.10000000000000001" maxValue="13" translatesAutoresizingMaskIntoConstraints="NO" id="wvc-so-lHw">
                                         <rect key="frame" x="23" y="563" width="329" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="NKu-2t-7ly"/>
