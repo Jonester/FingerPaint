@@ -24,10 +24,4 @@
     return self;
 }
 
--(void)storeLineSegments: (Segment *)lineSegments {
-    for (Segment *segment in self.segments){
-        [self.segments addObject:segment];
-    }
-}
-
 @end

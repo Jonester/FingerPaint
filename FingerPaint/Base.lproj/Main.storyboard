@@ -43,7 +43,7 @@
                                     </slider>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rah-CX-RPC">
                                         <rect key="frame" x="25" y="473" width="325" height="40"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="325" id="UTf-2i-7s4"/>
                                             <constraint firstAttribute="height" constant="40" id="rjv-dY-pp4"/>

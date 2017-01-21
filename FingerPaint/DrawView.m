@@ -17,7 +17,6 @@
     self = [super initWithCoder:coder];
     if (self) {
         _lines = [NSMutableArray new];
-        _segment   = [Segment new];
         _line = [[Line alloc]initWith:[UIColor blackColor]];
     }
     return self;
@@ -28,7 +27,8 @@
     CGPoint first = [touch previousLocationInView:self];
     
     Segment *segment = [[Segment alloc]initWithPoint1:first point2:first];
-    [self.line.segments addObject:segment];
+    Line *line = self.lines.lastObject;
+    [line.segments addObject:segment];
     [self setNeedsDisplay];
 }
 
@@ -38,7 +38,8 @@
     CGPoint second = [touch locationInView:self];
     
     Segment *segment = [[Segment alloc]initWithPoint1:first point2:second];
-    [self.line.segments addObject:segment];
+    Line *line = self.lines.lastObject;
+    [line.segments addObject:segment];
     [self setNeedsDisplay];
     
     NSLog(@"%s", __PRETTY_FUNCTION__);
@@ -46,29 +47,36 @@
 }
 
 -(void)drawRect:(CGRect)rect {
-    UIBezierPath *path = [UIBezierPath bezierPath];
-    path.lineWidth = 5.0;
-    path.lineCapStyle = kCGLineCapRound;
-    [self.line.color setStroke];
-    
-    for (Segment *segment in self.line.segments) {
-        if (CGPointEqualToPoint(segment.point1, segment.point2)) {
-            [path moveToPoint:segment.point1];
-        }
-        [path addLineToPoint:segment.point1];
-        [path addLineToPoint:segment.point2];
-    }
-    [path stroke];
     
     for (Line *line in self.lines) {
-        for (Segment *segment in self.line.segments) {
+        UIBezierPath *path = [UIBezierPath bezierPath];
+        path.lineWidth = 5.0;
+        path.lineCapStyle = kCGLineCapRound;
+        [line.color setStroke];
+        path.miterLimit = 2;
+        
+        for (Segment *segment in line.segments) {
             
+            if (CGPointEqualToPoint(segment.point1, segment.point2)) {
+                    [path moveToPoint:segment.point1];
+                continue;
+                }
+            [path addLineToPoint:segment.point1];
+            [path addLineToPoint:segment.point2];
         }
+        [path stroke];
     }
+    [self setNeedsDisplay];
+}
+
+-(void)createLine: (UIColor *)color {
+    Line *line = [[Line alloc]initWith:color];
+    [self.lines addObject:line];
 }
 
 -(void)clear {
     [self.line.segments removeAllObjects];
+    [self.lines removeAllObjects];
     [self setNeedsDisplay];
 }
 
