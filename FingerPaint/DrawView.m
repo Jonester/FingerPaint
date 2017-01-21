@@ -26,7 +26,7 @@
     CGPoint first = [touch previousLocationInView:self];
     
     LineSegment *segment = [[LineSegment alloc]initWithPoint1:first point2:first];
-    [self.lines addObject:segment];
+    [self.lineModel.lineSegments addObject:segment];
     [self setNeedsDisplay];
 }
 
@@ -35,11 +35,11 @@
     CGPoint first = [touch previousLocationInView:self];
     CGPoint second = [touch locationInView:self];
     
-    
-    
     LineSegment *segment = [[LineSegment alloc]initWithPoint1:first point2:second];
-    [self.lines addObject:segment];
+    [self.lineModel.lineSegments addObject:segment];
     [self setNeedsDisplay];
+    
+    NSLog(@"%s", __PRETTY_FUNCTION__);
     
 }
 
@@ -47,11 +47,11 @@
     UIBezierPath *path = [UIBezierPath bezierPath];
     path.lineWidth = 5.0;
     path.lineCapStyle = kCGLineCapRound;
-    
+    self.lineModel = [[LineModel alloc]initWith:[UIColor blackColor]];
     UIColor *black = [UIColor blackColor];
     [black setStroke];
     
-    for (LineSegment *segment in self.lines) {
+    for (LineSegment *segment in self.lineModel.lineSegments) {
         if (CGPointEqualToPoint(segment.point1, segment.point2)) {
             [path moveToPoint:segment.point1];
         }
@@ -59,10 +59,14 @@
         [path addLineToPoint:segment.point2];
     }
     [path stroke];
+    
+    for (LineModel *line in self.lines) {
+        
+    }
 }
 
 -(void)clear {
-    [self.lines removeAllObjects];
+    [self.lineModel.lineSegments removeAllObjects];
     [self setNeedsDisplay];
 }
 

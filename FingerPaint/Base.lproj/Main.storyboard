@@ -31,12 +31,15 @@
                                             <constraint firstAttribute="height" constant="40" id="jJp-lc-Sjd"/>
                                         </constraints>
                                     </imageView>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="7" minValue="0.5" maxValue="13.5" translatesAutoresizingMaskIntoConstraints="NO" id="wvc-so-lHw">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="13" translatesAutoresizingMaskIntoConstraints="NO" id="wvc-so-lHw">
                                         <rect key="frame" x="23" y="563" width="329" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="NKu-2t-7ly"/>
                                             <constraint firstAttribute="width" constant="325" id="Rzk-x1-4V5"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="colorSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="YKS-x8-qjG"/>
+                                        </connections>
                                     </slider>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rah-CX-RPC">
                                         <rect key="frame" x="25" y="473" width="325" height="40"/>
@@ -75,7 +78,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="colorPalette" destination="Jng-qP-yZb" id="sZn-0n-HZo"/>
-                        <outlet property="colorSlider" destination="wvc-so-lHw" id="qQt-td-qT1"/>
                         <outlet property="colorView" destination="rah-CX-RPC" id="uuf-n6-Xee"/>
                         <outlet property="drawingView" destination="WBw-TX-e8p" id="GCS-BQ-r6j"/>
                     </connections>

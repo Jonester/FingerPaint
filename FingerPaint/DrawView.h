@@ -12,8 +12,8 @@
 
 @interface DrawView : UIView
 
-@property (nonatomic) NSMutableArray <LineSegment *> *lines;
-@property (nonatomic) LineModel *line;
+@property (nonatomic) NSMutableArray <LineModel *> *lines;
+@property (nonatomic) LineModel *lineModel;
 
 -(void)clear;
 
